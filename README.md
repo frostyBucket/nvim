@@ -4,9 +4,15 @@ I noticed shortly after trying to use this configuration that you need to run a 
 
 So here's a quick list:
 
+For Linux:
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
+For Windows:
+git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
+
+For Mac:
+Get a better operating system
 
 Then you need to head over to lua/frosts/packer.lua in nvim and run these:
 
