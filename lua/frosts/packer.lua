@@ -17,6 +17,22 @@ use({
 	end
 })
 
+use {
+  "windwp/nvim-autopairs",
+  config = function()
+    local npairs = require("nvim-autopairs")
+    local Rule = require("nvim-autopairs.rule")
+
+    npairs.setup({
+      check_ts = true, -- treesitter support
+    })
+
+    -- Add rule for HTML only
+    npairs.add_rules({
+      Rule("<", ">", "html")
+    })
+  end
+}
 use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 use('nvim-treesitter/playground')
 use('theprimeagen/harpoon')
