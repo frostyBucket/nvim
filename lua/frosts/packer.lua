@@ -33,8 +33,23 @@ use {
     })
   end
 }
-use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-use('nvim-treesitter/playground')
+use {
+  "nvim-treesitter/nvim-treesitter",
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "typescript", "java", "rust", "html", "cpp", "xml", "css"},
+
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
+  auto_install = true,
+
+  highlight = {
+    enable = true,
+
+
+    additional_vim_regex_highlighting = false,
+  }
+}
+
 use('theprimeagen/harpoon')
 use('mbbill/undotree')
 use('tpope/vim-fugitive')
